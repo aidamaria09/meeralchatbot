@@ -26,7 +26,7 @@ def add_bg_from_local(image_file):
  
 
 def main():
-    load_dotenv()
+   my_secret_value = st.secrets["OPENAI_API_KEY"]
     
    
     st.set_page_config(
