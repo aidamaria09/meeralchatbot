@@ -1,2 +1,7 @@
 PyPDF2
-
+langchain.text_splitter
+langchain.embeddings.openai
+langchain.vectorstores
+langchain.chains.question_answering
+langchain.llms
+os
