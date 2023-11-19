@@ -9,20 +9,7 @@ from langchain.llms import OpenAI
 import os
 import base64
 import base64
-def add_bg_from_local(image_file):
-    with open(image_file, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read())
-    st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
-        background-size: cover
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-    )
+
  
 
 def main():
@@ -35,12 +22,7 @@ def main():
         layout="centered",
         initial_sidebar_state="auto",
     )
-
-    
-    script_directory = os.path.dirname(os.path.abspath(__file__))
-
-     
-    add_bg_from_local('Struct.png') 
+   
     
     
     header_container = st.container()
