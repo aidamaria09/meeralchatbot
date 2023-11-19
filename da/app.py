@@ -51,9 +51,9 @@ def main():
                                                chunk_overlap=200, length_function=len)
     text_chunks = char_text_splitter.split_text(text)
 
-    embeddings = OpenAIEmbeddings()
+    embeddings = OpenAIEmbeddings('OPENAI_API_KEY')
     docsearch = FAISS.from_texts(text_chunks, embeddings)
-    llm = OpenAI()
+    llm = OpenAI('OPENAI_API_KEY')
     chain = load_qa_chain(llm, chain_type="stuff")
 
     st.text("This is an online chatbot made by the MeeralRobotics team.\nIf you are having questions regarding the manual, this is the perfect place to be.\n")
