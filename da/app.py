@@ -33,13 +33,13 @@ def main():
    
     st.set_page_config(
         page_title="Meeralchat",
-        page_icon="logo.png", 
+        page_icon="da/logo.png", 
         layout="centered",
         initial_sidebar_state="auto",
     )
    
     
-     add_bg_from_local('Struct.png') 
+     add_bg_from_local('da/Struct.png') 
     header_container = st.container()
 
     
@@ -47,7 +47,7 @@ def main():
         st.header("Meeralchat")
   
 
-    pdf_path = "data.pdf"
+    pdf_path = "da/data.pdf"
     
     pdf_reader = PdfReader(pdf_path)
     text = ""
