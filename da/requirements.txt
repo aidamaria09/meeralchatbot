@@ -2,4 +2,4 @@ PyPDF2
 langchain
 openai
 tiktoken
-faiss
+faiss-gpu; sys_platform == 'win64'
