@@ -7,6 +7,7 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.llms import OpenAI
 import os
 import base64
+import openai
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
