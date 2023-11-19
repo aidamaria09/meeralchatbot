@@ -9,7 +9,7 @@ import os
 import base64
 import base64
 
-
+ os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"]
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())
@@ -52,9 +52,9 @@ def main():
                                                chunk_overlap=200, length_function=len)
     text_chunks = char_text_splitter.split_text(text)
 
-    embeddings = OpenAIEmbeddings(openai_api_key='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')
+    embeddings = OpenAIEmbeddings()
     docsearch = FAISS.from_texts(text_chunks, embeddings)
-    llm = OpenAI(openai_api_key='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')
+    llm = OpenAI()
     chain = load_qa_chain(llm, chain_type="stuff")
 
     st.text("This is an online chatbot made by the MeeralRobotics team.\nIf you are having questions regarding the manual, this is the perfect place to be.\n")
