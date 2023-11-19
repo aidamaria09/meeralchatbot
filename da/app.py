@@ -8,7 +8,6 @@ from langchain.llms import OpenAI
 import os
 import base64
 import base64
-import openai
 
 
 def add_bg_from_local(image_file):
