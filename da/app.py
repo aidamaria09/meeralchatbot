@@ -52,7 +52,7 @@ def main():
                                                chunk_overlap=200, length_function=len)
     text_chunks = char_text_splitter.split_text(text)
 
-    # Pass the actual API key, not the string 'OPENAI_API_KEY'
+
     embeddings = OpenAIEmbeddings()
     docsearch = FAISS.from_texts(text_chunks, embeddings)
     llm = OpenAI()
