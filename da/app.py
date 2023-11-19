@@ -52,9 +52,9 @@ def main():
     text_chunks = char_text_splitter.split_text(text)
 
     # Pass the actual API key, not the string 'OPENAI_API_KEY'
-    embeddings = OpenAIEmbeddings(st.secrets['OPENAI_API_KEY'])
+    embeddings = OpenAIEmbeddings()
     docsearch = FAISS.from_texts(text_chunks, embeddings)
-    llm = OpenAI(st.secrets['OPENAI_API_KEY'])
+    llm = OpenAI()
     chain = load_qa_chain(llm, chain_type="stuff")
 
     st.text("This is an online chatbot made by the MeeralRobotics team.\nIf you are having questions regarding the manual, this is the perfect place to be.\n")
