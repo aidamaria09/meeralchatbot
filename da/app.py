@@ -7,9 +7,7 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.llms import OpenAI
 import os
 import base64
-import base64
 
- os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"]
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())
@@ -25,8 +23,9 @@ def add_bg_from_local(image_file):
         unsafe_allow_html=True
     )
 
-
 def main():
+    # Set the OPENAI_API_KEY environment variable
+    os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
     st.set_page_config(
         page_title="Meeralchat",
@@ -64,7 +63,6 @@ def main():
         response = chain.run(input_documents=docs, question=query)
 
         st.write(response)
-
 
 if __name__ == '__main__':
     main()
