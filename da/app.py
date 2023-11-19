@@ -25,7 +25,7 @@ def add_bg_from_local(image_file):
     )
 
 def main():
-    # Set the OPENAI_API_KEY environment variable
+    
     os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
     st.set_page_config(
