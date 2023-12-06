@@ -58,7 +58,7 @@ def main():
     llm = OpenAI()
     chain = load_qa_chain(llm, chain_type="stuff")
 
-    st.text("This is an online chatbot made by the MeeralRobotics team.\nIf you are having questions regarding the manual, this is the perfect place to be.\n")
+    st.text("This is an online chatbot made \nby the MeeralRobotics team.\nIf you are having questions regarding\nthe manual, this is the perfect place to be.\n")
     query = st.text_input("Ask a question about the Game Manual Part 2:")
     if query:
         docs = docsearch.similarity_search(query)
