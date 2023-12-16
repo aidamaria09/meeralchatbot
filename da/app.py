@@ -59,7 +59,7 @@ def main():
     chain = load_qa_chain(llm, chain_type="stuff")
 
     st.text("This is an online chatbot made \nby the MeeralRobotics team.\nIf you are having questions regarding\nthe manual, this is the perfect \nplace to be.\n")
-    query = st.text_input("Ask a question about the Game Manual Part 1 & 2:")
+    query = st.text_input("Ask a question about the Game Manual Part 2:")
     if query:
         docs = docsearch.similarity_search(query)
         response = chain.run(input_documents=docs, question=query)
